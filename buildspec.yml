@@ -1,16 +1,17 @@
+## This is used by CodeBuild in the build step of our pipeline
 version: 0.0
 environment_variables:
-    plaintext:
-        "INPUT_FILE": "saml.yaml"
-        "S3_BUCKET": ""
+  plaintext:
+    "INPUT_FILE": "saml.yaml"
+    "S3_BUCKET": ""
 containers:
-    LambdaFunctions:
-        phases:
-            during_build:
-                commands:
-                    - npm install
-                    - aws cloudformation package --template $INPUT_FILE --s3-bucket $S3_BUCKET --output-template post-saml.yaml
-        artifacts:
-            files:
-                - post-saml.yaml
-                - beta.json
+  LambdaFunctions:
+    phases:
+      during_build:
+        commands:
+          - npm install
+          - aws cloudformation package --template $INPUT_FILE --s3-bucket $S3_BUCKET --output-template post-saml.yaml
+    artifacts:
+      files:
+        - post-saml.yaml
+        - beta.json

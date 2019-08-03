@@ -1,6 +1,6 @@
 {
-    "Parameters": {
-        "SamMultipler": "1",
-        "OriginUrl": "*"
-    }
+  "Parameters": {
+    "SamMultipler": "1",
+    "OriginUrl": "http://serverless-website-s3bucket-1wgi97rcj0fpd.s3-website-us-east-1.amazonaws.com"
+  }
 }
